@@ -8,6 +8,26 @@ This Power BI portfolio project analyses retail sales performance, customer acti
 
 Provide decision makers with a trusted view of order-level sales performance, customer and return activity, delivery status, inventory position, and promotion-related sales.
 
+## Detailed portfolio case study
+
+### Retail Decision Control: Sales, Returns and Inventory Transparency
+
+**Challenge:** The source package combined order headers, incomplete order lines, return transactions, customer records, inventory, and promotions. Combining these without grain and reconciliation controls could make product-level revenue or profit appear to represent the whole business.
+
+**Approach:** Profiled all nine CSV sources; checked missing values, exact duplicates, date validity, numeric fields, and selected key relationships; treated `orders_data.csv` as the authoritative sales source; and used a shared `DimDate` plus governed measures for report calculations. The Power BI report organizes sales, product/inventory/promotion context, and returns into separate decision views.
+
+### **Verified evidence.**
+
+- Order-header data contains 5,000 orders and authoritative sales of **$250,468,770.96**.
+- Order-line data covers 470 orders, or **9.4%**, and all 470 comparable order totals differ from the corresponding header totals.
+- The return extract contains **1,000 transactions** across **425 distinct returned orders**, with **$2,551,653.41** in refund amounts.
+- The largest documented refund reason is “Wrong item” at approximately **$0.70M**; this is a descriptive reason total, not a proven root cause.
+- Promotion-linked sales are reported as association, not incremental lift or promotion profitability.
+
+ **Decision value:** The report helps a reviewer distinguish reliable order-level sales and return activity from product-line analysis that is not complete enough for enterprise revenue or margin claims. It also makes the evidence limitations visible rather than hiding them.
+
+**Limitations:** The dataset's source organization and provenance are unknown. The project does not establish that the findings generalize to a real retailer, identify causal drivers, measure realized business outcomes, or validate an intervention. The 2026 annual amount is incomplete relative to a full-year comparison. Return Activity Rate is an event-date proxy, not a cohort return rate.
+
 ## Important data scope
 
 - `orders_data.csv` is the authoritative sales source. One row represents one order.
@@ -19,7 +39,6 @@ Provide decision makers with a trusted view of order-level sales performance, cu
 
 - `data/raw/` — immutable source CSV files.
 - `documentation/` — business problem, data dictionary, methodology, insights, data quality, and audit records.
-- `powerbi/` — PBIP report and semantic-model source.
 - `python/` — reproducible data-profiling utilities.
 - `screenshots/` — curated dashboard screenshots for this README.
 - `Retail_sales_store_project.sql` — optional SQL Server implementation.
