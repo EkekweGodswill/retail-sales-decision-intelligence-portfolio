@@ -83,14 +83,6 @@ The following screenshots show the four report pages after the Power BI Desktop 
 - Repeat Customers
 - Order Line Coverage
 
-## Career and hiring assessment
-
-See [`documentation/career_and_hiring_assessment.md`](documentation/career_and_hiring_assessment.md) for role positioning, evidence-based portfolio and interview materials, and the final hiring-manager assessment.
-
-## Refresh and release checks
-
-Before publishing, refresh all tables, reconcile KPI cards to `documentation/data_quality_report.md`, validate slicer interactions, remove development-only pages, and export final screenshots with no contact details visible.
-
 ## Tools
 
 Power BI Desktop, Power Query, DAX, Python, pandas, and optional SQL Server.
