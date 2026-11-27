@@ -1,0 +1,11 @@
+# Power BI local state and cache
+powerbi/**/.pbi/localSettings.json
+powerbi/**/.pbi/cache.abf
+
+# Python local state
+__pycache__/
+*.pyc
+.venv/
+
+# Local configuration override
+powerbi/local-parameters.md
